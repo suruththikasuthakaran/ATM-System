@@ -6,14 +6,14 @@ import java.sql.SQLException;
 
 public class DBUtil {
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/payroll";
-    private static final String USER = "username";
+    private static final String USER = "";
     private static final String PASSWORD = "";
 
     static {
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            throw new ExceptionInInitializerError("PostgreSQL JDBC Driver not found: " + e.getMessage());
+            throw new ExceptionInInitializerError("mysql JDBC Driver not found: " + e.getMessage());
         }
     }
 
