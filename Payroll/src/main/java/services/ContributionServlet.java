@@ -32,7 +32,12 @@ public class ContributionServlet extends HttpServlet {
                 response.getWriter().write("{\"error\":\"Failed to insert contribution\"}");
             }
         }
-    }
+        catch (Exception e) {
+                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                response.getWriter().write("{\"error\":\"Invalid JSON: " + e.getMessage() + "\"}");
+            }
+        }
+
 
 
     @Override
